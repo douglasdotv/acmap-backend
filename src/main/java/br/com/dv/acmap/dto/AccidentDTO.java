@@ -7,7 +7,7 @@ public record AccidentDTO(
         LocalDate date,
         String operator,
         String flightNumber,
-        String aircraftModel,
+        String aircraftType,
         String aircraftRegistration,
         Integer occupants,
         Integer fatalities,
@@ -23,7 +23,7 @@ public record AccidentDTO(
         String destinationAirportCountry,
         String flightPhase,
         String description,
-        Boolean disputed,
+        Boolean isDisputed,
         List<String> categories
 ) {
 }

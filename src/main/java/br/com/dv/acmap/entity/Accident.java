@@ -22,7 +22,7 @@ public class Accident {
 
     private String flightNumber;
 
-    private String aircraftModel;
+    private String aircraftType;
 
     private String aircraftRegistration;
 
@@ -54,7 +54,7 @@ public class Accident {
 
     private String description;
 
-    private Boolean disputed;
+    private Boolean isDisputed;
 
     @OneToMany(mappedBy = "accident")
     private List<AccidentCategory> categories;
