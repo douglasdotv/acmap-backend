@@ -27,4 +27,22 @@ public class AccidentController {
         return ResponseEntity.ok(accidents);
     }
 
+    @GetMapping("/operators")
+    public ResponseEntity<List<String>> getOperators() {
+        List<String> operators = accidentService.getOperators();
+        return ResponseEntity.ok(operators);
+    }
+
+    @GetMapping("/aircraft-types")
+    public ResponseEntity<List<String>> getAircraftModels() {
+        List<String> aircraftTypes = accidentService.getAircraftTypes();
+        return ResponseEntity.ok(aircraftTypes);
+    }
+
+    @GetMapping("/categories")
+    public ResponseEntity<List<String>> getCategories() {
+        List<String> categories = accidentService.getCategories();
+        return ResponseEntity.ok(categories);
+    }
+
 }
