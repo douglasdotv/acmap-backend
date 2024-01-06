@@ -8,4 +8,10 @@ public interface AccidentService {
 
     List<AccidentDTO> getAllAccidents();
 
+    List<String> getOperators();
+
+    List<String> getAircraftTypes();
+
+    List<String> getCategories();
+
 }
