@@ -13,10 +13,12 @@ import java.util.stream.Collectors;
 public abstract class AccidentMapper {
 
     @Mapping(target = "categories", expression = "java(mapCategories(accident.getCategories()))")
+    @SuppressWarnings("unused")
     public abstract AccidentDTO toAccidentDTO(Accident accident);
 
     public abstract List<AccidentDTO> toAccidentDTOs(List<Accident> accidents);
 
+    @SuppressWarnings("unused")
     protected List<String> mapCategories(List<AccidentCategory> categories) {
         if (categories == null) {
             return null;
