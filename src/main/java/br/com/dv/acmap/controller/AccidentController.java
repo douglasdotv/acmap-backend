@@ -1,12 +1,10 @@
 package br.com.dv.acmap.controller;
 
 import br.com.dv.acmap.dto.AccidentDTO;
+import br.com.dv.acmap.dto.SearchFormDTO;
 import br.com.dv.acmap.service.AccidentService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +22,12 @@ public class AccidentController {
     @GetMapping
     public ResponseEntity<List<AccidentDTO>> getAllAccidents() {
         List<AccidentDTO> accidents = accidentService.getAllAccidents();
+        return ResponseEntity.ok(accidents);
+    }
+
+    @PostMapping("/search")
+    public ResponseEntity<List<AccidentDTO>> searchAccidents(@RequestBody SearchFormDTO form) {
+        List<AccidentDTO> accidents = accidentService.searchAccidents(form);
         return ResponseEntity.ok(accidents);
     }
 
