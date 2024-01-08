@@ -3,6 +3,7 @@ package br.com.dv.acmap.controller;
 import br.com.dv.acmap.dto.AccidentDTO;
 import br.com.dv.acmap.dto.SearchFormDTO;
 import br.com.dv.acmap.service.AccidentService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +27,7 @@ public class AccidentController {
     }
 
     @PostMapping("/search")
-    public ResponseEntity<List<AccidentDTO>> searchAccidents(@RequestBody SearchFormDTO form) {
+    public ResponseEntity<List<AccidentDTO>> searchAccidents(@Valid @RequestBody SearchFormDTO form) {
         List<AccidentDTO> accidents = accidentService.searchAccidents(form);
         return ResponseEntity.ok(accidents);
     }
