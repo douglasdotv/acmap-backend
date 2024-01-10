@@ -6,6 +6,7 @@ import br.com.dv.acmap.entity.AccidentCategory;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,7 +22,7 @@ public abstract class AccidentMapper {
     @SuppressWarnings("unused")
     protected List<String> mapCategories(List<AccidentCategory> categories) {
         if (categories == null) {
-            return null;
+            return Collections.emptyList();
         }
 
         return categories.stream().map(AccidentCategory::getCategory).collect(Collectors.toList());
