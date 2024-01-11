@@ -1,11 +1,11 @@
 package br.com.dv.acmap.controller;
 
 import br.com.dv.acmap.dto.AccidentDTO;
-import br.com.dv.acmap.dto.SearchFormDTO;
 import br.com.dv.acmap.service.AccidentService;
-import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -23,30 +23,6 @@ public class AccidentController {
     public ResponseEntity<List<AccidentDTO>> getAllAccidents() {
         List<AccidentDTO> accidents = accidentService.getAllAccidents();
         return ResponseEntity.ok(accidents);
-    }
-
-    @PostMapping("/search")
-    public ResponseEntity<List<AccidentDTO>> searchAccidents(@Valid @RequestBody SearchFormDTO form) {
-        List<AccidentDTO> accidents = accidentService.searchAccidents(form);
-        return ResponseEntity.ok(accidents);
-    }
-
-    @GetMapping("/operators")
-    public ResponseEntity<List<String>> getOperators() {
-        List<String> operators = accidentService.getOperators();
-        return ResponseEntity.ok(operators);
-    }
-
-    @GetMapping("/aircraft-types")
-    public ResponseEntity<List<String>> getAircraftModels() {
-        List<String> aircraftTypes = accidentService.getAircraftTypes();
-        return ResponseEntity.ok(aircraftTypes);
-    }
-
-    @GetMapping("/categories")
-    public ResponseEntity<List<String>> getCategories() {
-        List<String> categories = accidentService.getCategories();
-        return ResponseEntity.ok(categories);
     }
 
 }
