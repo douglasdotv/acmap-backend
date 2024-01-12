@@ -59,4 +59,7 @@ public class Accident {
     @OneToMany(mappedBy = "accident")
     private List<AccidentCategory> categories;
 
+    @OneToMany(mappedBy = "accident")
+    private List<AccidentResource> resources;
+
 }
