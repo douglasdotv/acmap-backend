@@ -24,6 +24,7 @@ public record AccidentDTO(
         String flightPhase,
         String description,
         Boolean isDisputed,
-        List<String> categories
+        List<String> categories,
+        List<ResourceDTO> resources
 ) {
 }
