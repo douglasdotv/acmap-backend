@@ -1,7 +1,5 @@
 package br.com.dv.acmap.dto;
 
-import br.com.dv.acmap.entity.Airport;
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -17,8 +15,8 @@ public record AccidentDTO(
         Double latitude,
         Double longitude,
         String country,
-        Airport departureAirport,
-        Airport destinationAirport,
+        AirportDTO departureAirport,
+        AirportDTO destinationAirport,
         String flightPhase,
         String description,
         Boolean isDisputed,
