@@ -38,17 +38,13 @@ public class Accident {
 
     private String country;
 
-    private String departureAirportIcao;
+    @ManyToOne
+    @JoinColumn(name = "departure_airport_id", referencedColumnName = "id")
+    private Airport departureAirport;
 
-    private String departureAirportCity;
-
-    private String departureAirportCountry;
-
-    private String destinationAirportIcao;
-
-    private String destinationAirportCity;
-
-    private String destinationAirportCountry;
+    @ManyToOne
+    @JoinColumn(name = "destination_airport_id", referencedColumnName = "id")
+    private Airport destinationAirport;
 
     private String flightPhase;
 

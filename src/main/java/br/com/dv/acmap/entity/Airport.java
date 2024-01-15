@@ -1,11 +1,10 @@
 package br.com.dv.acmap.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -29,5 +28,11 @@ public class Airport {
     private Double latitude;
 
     private Double longitude;
+
+    @OneToMany(mappedBy = "departureAirport")
+    private List<Accident> departureAccidents;
+
+    @OneToMany(mappedBy = "destinationAirport")
+    private List<Accident> destinationAccidents;
 
 }
