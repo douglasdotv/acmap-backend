@@ -58,4 +58,7 @@ public class Accident {
     @OneToMany(mappedBy = "accident")
     private List<AccidentResource> resources;
 
+    @OneToMany(mappedBy = "accident")
+    private List<Stopover> stopovers;
+
 }

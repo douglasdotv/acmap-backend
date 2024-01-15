@@ -35,4 +35,7 @@ public class Airport {
     @OneToMany(mappedBy = "destinationAirport")
     private List<Accident> destinationAccidents;
 
+    @OneToMany(mappedBy = "airport")
+    private List<Stopover> stopovers;
+
 }
