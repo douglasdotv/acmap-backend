@@ -18,6 +18,7 @@
         <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
         <org.projectlombok.version>1.18.30</org.projectlombok.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
+        <datasource-proxy.version>1.9.1</datasource-proxy.version>
     </properties>
     <dependencies>
         <dependency>
@@ -54,6 +55,11 @@
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
             <version>${org.mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.gavlyukovskiy</groupId>
+            <artifactId>datasource-proxy-spring-boot-starter</artifactId>
+            <version>${datasource-proxy.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
